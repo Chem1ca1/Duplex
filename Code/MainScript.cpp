@@ -59,7 +59,7 @@ namespace Big
 
 		g_UiManager->AddSubmenu<RegularSubmenu>("Home", SubmenuHome, [](RegularSubmenu* sub)
 		{
-			g_UiManager->m_HeaderType = HeaderType::Static;
+			g_UiManager->m_HeaderType = HeaderType::Gradient;
 			g_UiManager->m_HeaderText = true;
 			sub->AddOption<SubOption>("Player List", nullptr, SubmenuPlayerList);
 			sub->AddOption<SubOption>("Self Options", nullptr, SubmenuSelfOptions);
@@ -76,34 +76,6 @@ namespace Big
 			});
 			sub->AddOption<RegularOption>(std::move(RegularOption("Version").SetRightText(g_GameVariables->m_GameBuild)));
 		});
-
-	/*	g_UiManager->AddSubmenu<RegularSubmenu>(BIG_TRANSLATE("Demo_sub"), SubmenuTest, [](RegularSubmenu* sub)
-		{
-			sub->AddOption<RegularOption>(BIG_TRANSLATE("RegularOption_demo"), "A regular option.", []
-			{
-				g_Logger->Info("You pressed the test option");
-			});
-
-			static bool testBool1{};
-			sub->AddOption<BoolOption<bool>>(BIG_TRANSLATE("BoolOnOff_demo"), nullptr, &testBool1, BoolDisplay::OnOff);
-			static bool testBool2{};
-			sub->AddOption<BoolOption<bool>>(BIG_TRANSLATE("BoolYesNo_demo"), nullptr, &testBool2, BoolDisplay::YesNo);
-
-			static std::int32_t int32Test{ 69 };
-			sub->AddOption<NumberOption<std::int32_t>>("Int32", nullptr, &int32Test, 0, 100);
-
-			static std::int64_t int64Test{ 420 };
-			sub->AddOption<NumberOption<std::int64_t>>("Int64", nullptr, &int64Test, 0, 1000, 10);
-
-			static float floatTest{ 6.9f };
-			sub->AddOption<NumberOption<float>>("Float", nullptr, &floatTest, 0.f, 10.f, 0.1f, 1);
-
-			static std::vector<std::uint64_t> vector{ 1, 2, 3 };
-			static std::size_t vectorPos{};
-
-			sub->AddOption<ChooseOption<const char*, std::size_t>>("Array", nullptr, &Lists::DemoList, &Lists::DemoListPos);
-			sub->AddOption<ChooseOption<std::uint64_t, std::size_t>>("Vector", nullptr, &vector, &vectorPos);
-		}); */
 	
 
 		g_UiManager->AddSubmenu<RegularSubmenu>("Settings", SubmenuSettings, [](RegularSubmenu* sub)
