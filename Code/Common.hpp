@@ -46,7 +46,7 @@
 #define duplex_STRINGIZE_IMPL(x) #x
 #define duplex_STRINGIZE(x) duplex_STRINGIZE_IMPL(x)
 
-#define duplex_NAME "BigBabe"
+#define duplex_NAME "Duplex"
 
 namespace Big
 {
